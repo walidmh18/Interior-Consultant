@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    z-index: 0;
+}
+body{
+    background: #181719;
+}
+a{
+    all: unset;
+    cursor: pointer;
+    color: #fff;
+}
+nav{
+    width: 100%;
+    height: 15vh;
+    padding: 2rem 4rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: #181719;
+}
+nav > a{
+    border: 1px solid white;
+    padding: 1rem;
+}
+.navlistContainer{
+    display: flex;
+    gap: 1rem;
+}
+.navListContainer a{
+    padding: 0.75rem 1.5rem;
+    text-transform: capitalize;
+    position: relative;
+}
+.navActive::after{
+    width: 70% !important;
+}
+.navListContainer a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    bottom: 5px;left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background: #fff;
+    transition: 0.3s;
+}
+.navListContainer a:hover::after{
+    width: 70%;
+}
+
+
+
+.bodyContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20vh 3rem 7rem;
+    gap: 3rem;
+    z-index: 0;
+    
+}
+.right div > img{
+    width: 100%;
+}
+
+.right div{
+    position: relative;
+    width: 100%;
+}
+.comment{
+    position: absolute !important;
+    width: 400px !important;
+    background: #181719;
+    bottom: 0%;
+    right: 0;
+    transform: translate(-10% , 50%);
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.comment h1{
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+}
+.profile{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+.profile img{
+    width: 50px !important;
+    border-radius: 50%;
+    z-index: 0;
+}
+.left {
+    width: 70%;
+}
+.left h1{
+    font-family: 'Lora', serif;
+    margin-bottom: 1rem;
+}
+.left p{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+.left a{
+    font-size: 1.5rem;
+    position: relative;
+    padding: 5px;
+}
+.left a::after{
+    content: '';
+    background: #fff;
+    width: 0;
+    height: 3px;
+    bottom: 0;left: 0;
+    position: absolute;
+    transition: 0.3s ease;
+}
+.left a:hover::after{
+    width: 100%;
+}
+
+
+.showWhenOnMobile{
+    display: none;
+}
+.created-by{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+@media screen and (max-width:768px){
+    .showWhenOnMobile{
+        display: block;
+        position: relative;
+        margin-right: 3rem;
+        width: 40px;
+        height: 40px;
+    }
+    .nav-opener{
+        width: 40px;
+        height: 3px;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        transition: 0.5s;
+    }
+    .top{
+        top: 10%;
+    }
+    .center{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .bottom{
+        bottom: 10%;
+    }
+    
+    .Active .top{
+        top: 50%;
+        transform: rotate(45deg) translateY(-50%);
+    }
+    .Active .center{
+        top: 50%;
+        left: -50%;
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    .Active .bottom{
+        bottom: 50%;
+        transform: rotate(-45deg) translateY(50%);
+
+    }
+    .navListContainer{
+        position: fixed;
+        background: #181719;
+        height: 85vh;
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem;
+        padding: 4rem 0;
+        align-items: center;
+        bottom: -100vh;
+        left: 0;
+        z-index: 1000;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+    .navliston{
+        bottom: 0;
+
+    }
+    .bodyContainer{
+        flex-direction: column;
+        
+    }
+    .left{
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 2rem;
+    }
+    .left a:after{
+        width: 100%;
+    }
+}
+@media screen and (max-width:500px) {
+    .comment{
+        width: 250px !important;
+        padding: 0.5rem;
+    }
+    .comment h2 ,h1{
+        font-size: 1rem;
+    }
+    .profile img{
+        width: 35px !important;
+    }
+    .showWhenOnMobile{
+        margin: 0;
+    }
+}
